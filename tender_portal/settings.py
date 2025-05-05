@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'allauth',  # allauth app
     'allauth.account',  # allauth app
     'allauth.socialaccount',  # allauth app
+    'users',
+    'tenders',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +62,10 @@ ROOT_URLCONF = 'tender_portal.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates', 'allauth'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
